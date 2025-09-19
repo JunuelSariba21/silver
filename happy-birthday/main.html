@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY NEW YEAR</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <!-- Button -->
+  <button id="popupBtn">Click Here</button>
+
+  <!-- Message container -->
+  <div id="messageContainer"></div>
+
+  <script src="index.js"></script>
+  <script>
+    const btn = document.getElementById("popupBtn");
+    const container = document.getElementById("messageContainer");
+
+    btn.addEventListener("click", () => {
+      // Remove previous message
+      container.innerHTML = '';
+
+      // Create new message div
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "long-message";
+      msgDiv.innerHTML = `
+        🎉 Happy Birthday Bel! 🎉<br><br>
+        I hope your day is filled with joy, laughter, and all the wonderful things you deserve.
+        Wishing you more birthdays to come.
+      `;
+      container.appendChild(msgDiv);
+
+      // Animate
+      setTimeout(() => msgDiv.classList.add("fade-in"), 50);
+    });
+  </script>
+</body>
+</html>

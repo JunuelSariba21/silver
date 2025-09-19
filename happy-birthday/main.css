@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url(pic.png) no-repeat center center fixed;
+  background-size: cover; /* cover entire screen */
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* keep canvas above background but behind elements */
+}
+
+
+/* Button below greetings */
+#popupBtn {
+  position: fixed;
+  top: 60%; /* slightly below center where greetings are */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  padding: 14px 0;
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff4081, #ff80ab);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+  box-shadow: 0 0 20px rgba(255,64,129,0.6), 0 0 40px rgba(255,128,171,0.4);
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 5;
+}
+
+#popupBtn:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 0 30px rgba(255,64,129,0.8), 0 0 60px rgba(255,128,171,0.6);
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+/* Message container */
+#messageContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 6;
+}
+
+/* Long message styling */
+.long-message {
+  background: rgba(255, 64, 129, 0.95);
+  color: white;
+  font-size: 20px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255,64,129,0.5);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+
+  text-align: justify;
+}
+
+/* Fade-in */
+.long-message.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
