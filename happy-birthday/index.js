@@ -398,3 +398,83 @@ window.addEventListener("resize", function () {
 
   ctx.font = opts.charSize + "px Verdana";
 });
+
+const btn = document.getElementById("popupBtn");
+const container = document.getElementById("messageContainer");
+
+btn.addEventListener("click", () => {
+  container.innerHTML = ''; // Clear previous content
+
+  // Array of messages from different people
+  const messages = [
+    {
+      name: "From Spoiledbrat",
+      text: `
+        I hope your day is filled with joy, laughter, and all the wonderful things you deserve. Wishing you many more birthdays to come.
+      `
+    },
+    {
+      name: "From Frnnyyy ",
+      text: `
+        Welcome to adulting life, may you have an amazing life ahead, filled with joy, love, peace,  and pure kindness. Thank you for being my one call away frnnyyy, mwahhh🤍
+      `
+    },
+    {
+      name: "From TuROnMarielwithsUgar❌❌",
+      text: `
+        Happy birthday, bebegurl, our pot pot! 💕 I’m so grateful to be part of your journey. Things may have changed, but my love and care for you will always stay the same. Our friendship and bond are unshakable, and I’ll always be hereyour Ange who listens and understands without judgment. Wishing you the best in all the challenges, joys, and blessings ahead. I love you always! 💖
+      `
+    },
+    {
+      name: "From H",
+      text: `
+        Happy birthday po, Wishing you a good health and do what makes you happy and no matter how hard life is still don't give up
+      `
+    },
+    {
+      name: "From Hnss",
+      text: `
+        Happy Birthday Silver Swan, More Birthday's to come and always be Happy and cheerful every day, awaya permi si cap HAHAHA, Happy birthday birthday girl🎂🎂.
+      `
+    },
+    {
+      name: "From Javi",
+      text: `
+        Just wanted to remind you how much I appreciate having you in my life. You’re not just my friend you’re family to me. Thanks for always being there, for the laughs, and for the times you listen without judgment. Happy birthday!!
+      `
+    },
+    {
+      name: "From Kid",
+      text: `
+        Happy Birthday Silver pang libre hehe
+      `
+    },
+    {
+      name: "From Jhanna",
+      text: `
+        Wishing you a blessed birthday Silver! May this new year bring more of God’s answers to the desires of your heart.
+      `
+    },
+    {
+      name: "From Whilmar",
+      text: `
+        Hapy birthday 🎂🎉🎈🎉
+      `
+    }
+  ];
+
+  // Create divs for each message
+  messages.forEach(msg => {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "long-message";
+
+    msgDiv.innerHTML = `
+      <h1>${msg.name}</h1>
+      <p>${msg.text.replace(/\n/g, "<br>")}</p>
+    `;
+
+    container.appendChild(msgDiv);
+
+    setTimeout(() => msgDiv.classList.add("fade-in"), 100);
+  });
+});

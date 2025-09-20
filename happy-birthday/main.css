@@ -3,6 +3,7 @@ body {
   overflow: hidden;
   background: url(pic.png) no-repeat center center fixed;
   background-size: cover; /* cover entire screen */
+  font-family: 'Poppins', sans-serif;
 }
 canvas {
   position: absolute;
@@ -44,36 +45,47 @@ canvas {
   50% { transform: translateX(-50%) scale(1.05); }
   100% { transform: translateX(-50%) scale(1); }
 }
-
-/* Message container */
 #messageContainer {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  max-width: 600px;
-  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh; /* prevent overflow */
+  overflow-y: auto; /* allow scrolling if too many messages */
+  padding: 20px;
   z-index: 6;
 }
 
-/* Long message styling */
+/* Individual message card */
 .long-message {
-  background: rgba(255, 64, 129, 0.95);
-  color: white;
-  font-size: 20px;
-  padding: 20px 24px;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(255,64,129,0.5);
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.6s ease;
-
-  text-align: justify;
+    font-family: 'Dancing Script';
+    background: rgba(244, 255, 28, 0.8);
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.6;
+    padding: 20px 24px;
+    margin: 15px 0;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(255,64,129,0.5);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease;
+    text-align: justify;
 }
 
-/* Fade-in */
 .long-message.fade-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+.long-message h1 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
 }
